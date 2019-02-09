@@ -10,28 +10,17 @@
 	<!-- add entry to enable component scanning -->
 
 	<context:component-scan base-package="com.luv2code.springdemo" />
-	
-	<!-- load the properties file: sports.properti,es -->
-	<context:property-placeholder location="classpath:sport.properties"/> 
 
 	<!-- Define the dependency, object instantiated here-->
 		
 	<bean id="myFortuneService" class="com.luv2code.springdemo.HappyFortuneService">
 	</bean>
 
-	<bean id="myCoach" class="com.luv2code.springdemo.ChessCoach">
+	<bean id="myCoach" class="com.luv2code.springdemo.ChessCoach" scope="prototype">
 	
 		<!-- set up constructor injection --> 
 		<constructor-arg ref="myFortuneService"/>
 	</bean>
-
-	<bean id="myCricketCoach" class="com.luv2code.springdemo.CricketCoach">
-		<property name="fortuneService" ref="myFortuneService"></property>
-		
-		<property name="emailAddress" value="${foo.email}"></property>
-		<property name="team" value="${foo.team}"></property>
-	</bean>
-
 
 </beans>
 

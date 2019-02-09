@@ -21,5 +21,17 @@ public class ChessCoach implements Coach {
 	public String getDailyFortune() {
 		return "this is a CHESS FORTUNE " + fs.getFortune();
 	}
+	
+	// add an init method 
+	public void doMyStartupStuff() { 
+		System.out.println("ChessCoach: inside method doMyStartupStuff");
+		
+	}
+	
+	// add destroy method for beans
+	public void doMyCleanUpStuffYOYO() { 
+		System.out.println("ChessCoach: inside method doMyCleanUpStuffYOYO");
+	}
+
 
 }
